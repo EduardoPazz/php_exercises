@@ -6,22 +6,33 @@
     <title>Calendar in PHP</title>
 </head>
 <body>
-    <table>
+    <table border="1">
         <tr>
-          <th scope="col">D</th>
           <th scope="col">S</th>
+          <th scope="col">M</th>
           <th scope="col">T</th>
+          <th scope="col">W</th>
+          <th scope="col">T</th>
+          <th scope="col">F</th>
+          <th scope="col">S</th>
         </tr>
-        <tr>
-          <td> <?= date('w') ?> </td>
-          <td>Smith</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-          <td>94</td>
-        </tr>
+
+        <?php 
+          $d = 1;
+          $stop = false;
+          while (!$stop) { 
+        ?>
+          <tr>
+            <?php for ($i = 0; $i < 7; $i++, $d++) { 
+              if ($d > 31) {
+                $stop = true;
+                break;
+              }
+            ?>
+                <td> <?= $d ?> </td>
+            <?php }; ?>  
+          </tr>
+        <?php }; ?>
     </table>    
 </body>
 </html>
