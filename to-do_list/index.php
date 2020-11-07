@@ -1,3 +1,5 @@
+<!-- Using sessions -->
+
 <?php 
     include "./aux.php";
     session_start(); 
